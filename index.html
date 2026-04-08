@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #1a1a1a;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: transparent;
+            padding: 2rem;
+            border: none;
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #333;
+            color: #777;
+            padding: 8px;
+            width: 90%;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto 12px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            border-bottom: 1px solid #555;
+            color: #aaa;
+        }
+        input::placeholder {
+            color: #333;
+        }
+        button {
+            background: transparent;
+            color: #555;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            transition: color 0.3s ease;
+        }
+        button:hover {
+            color: #aaa;
+        }
+        #log {
+            margin-top: 18px;
+            color: #555;
+            min-height: 1.4em;
+            font-size: 0.8rem;
+        }
+        #site-frame {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        #download-btn {
+            color: #555;
+            margin-top: 25px;
+            display: none;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        #download-btn:hover {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-box">
+        <input type="password" id="pass" placeholder="..." autocomplete="off" spellcheck="false" />
+        <button onclick="unlock()">init</button>
+        <div id="log"></div>
+        <a id="download-btn" download="archive.zip">get_data</a>
+    </div>
+
+    <iframe id="site-frame"></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/@zip.js/zip.js@2.7.32/dist/zip.min.js"></script>
+    <script src="decrypt.js"></script>
+</body>
+</html>
